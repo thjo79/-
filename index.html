@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#2196F3">
+    <title>AR 실측 사이즈 측정기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AR 실측 사이즈 측정기</h1>
+        </header>
+
+        <main>
+            <div id="ar-container">
+                <canvas id="ar-canvas"></canvas>
+                <div id="measurement-info">
+                    <p id="distance-display">거리: <span id="distance-value">0.00</span> cm</p>
+                    <p id="instructions">AR 세션을 시작하고 두 점을 선택하여 거리를 측정하세요.</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start-ar">AR 시작</button>
+                <button id="measure" disabled>측정하기</button>
+                <button id="reset" disabled>초기화</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>WebXR API를 사용한 AR 실측 사이즈 측정 앱</p>
+        </footer>
+    </div>
+
+    <div id="unsupported-message" class="hidden">
+        <p>죄송합니다. 이 브라우저는 WebXR을 지원하지 않습니다.</p>
+        <p>Chrome 또는 Firefox 최신 버전을 사용해주세요.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="hit-test.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
